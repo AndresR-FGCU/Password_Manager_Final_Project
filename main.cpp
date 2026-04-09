@@ -55,11 +55,26 @@ int main() {
                     myEntry.display();
                 }
                 break;
-                
+
             case 3:
                 break;
 
             case 4:
+                if (entryCount == 0) {
+                    cout << "No passwords stored yet!" << endl;
+                } else {
+                    int choice;
+                    cout << "Which entry (1-" << entryCount << ") would you like to update? ";
+                    cin >> choice;
+
+                    if (choice > 0 && choice <= entryCount) {
+                        cout << "Enter New Password for " << apps[choice-1] << ": ";
+                        cin >> passwords[choice-1];
+                        cout << "Password updated successfully!" << endl;
+                    } else {
+                        cout << "Invalid entry number." << endl;
+                    }
+                }
                 break;
 
             case 5:
