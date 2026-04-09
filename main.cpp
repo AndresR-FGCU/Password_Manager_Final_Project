@@ -57,6 +57,20 @@ int main() {
                 break;
 
             case 3:
+                if (entryCount == 0) {
+                    cout << "No passwords stored yet!" << endl;
+                } else {
+                    int choice;
+                    cout << "Which entry (1-" << entryCount << ") would you to see? ";
+                    cin >> choice;
+
+                    if (choice > 0 && choice <= entryCount) {
+                        PasswordEntry myEntry(usernames[choice-1], passwords[choice-1], apps[choice-1]);
+                        myEntry.display();
+                    } else {
+                        cout << "Invalid entry number." << endl;
+                    }
+                }
                 break;
 
             case 4:
